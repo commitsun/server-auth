@@ -98,6 +98,12 @@ class AuthJwtValidator(models.Model):
         default=True, help="Set to false only for development without https."
     )
     cookie_secret = fields.Char()
+    renew_cookie_on_response = fields.Boolean(
+        help="Renew the cookie in every response to keep the client "
+        "authenticated as long as it uses the API. Don't mark unless you have a "
+        "way to invalidate sessions",
+        default=True,
+    )
 
     _sql_constraints = [
         ("name_uniq", "unique(name)", "JWT validator names must be unique !"),

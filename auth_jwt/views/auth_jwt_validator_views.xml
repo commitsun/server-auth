@@ -72,6 +72,11 @@
                                 name="cookie_secret"
                                 attrs="{'invisible': [('cookie_enabled', '=', False)]}"
                             />
+                            <field
+                                name="renew_cookie_on_response"
+                                attrs="{'invisible': [('cookie_enabled', '=', False)]}"
+                            />
+
                         </group>
                     </group>
                 </sheet>
